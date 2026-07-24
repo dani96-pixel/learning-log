@@ -1,0 +1,14 @@
+# C build artifacts (CS50)
+*.o
+*.out
+a.out
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# OS/editor junk
+.DS_Store
+Thumbs.db
+*.swp
