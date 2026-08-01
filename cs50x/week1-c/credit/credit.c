@@ -7,42 +7,56 @@
 #include <stdbool.h>
 
 // =========================================================================
-// FUNCTION PROTOTYPES (Your promises to the compiler)
+// FUNCTION PROTOTYPES
 // =========================================================================
 
 // Prototype: Function 1 (Count digits). Receives a long long, returns an int.
+int count_digits(long long number);
+
 // Prototype: Function 2 (Extract prefix). Receives a long long, returns an int (the first 2 digits).
+int extract_prefix(long long card);
+
 // Prototype: Function 3 (Luhn's algorithm). Receives a long long, returns a bool.
+bool luhn(long long card);
+
 // Prototype: Function 4 (Split and sum product). Receives an int, returns an int.
+int split_and_sum_product(int value);
 
 // =========================================================================
 // MAIN FUNCTION
 // =========================================================================
 
 // Start main function
-// {
-// 1. Prompt the user for a credit card number and store it in a long long.
+int main(void)
+{
+    // {
+    // 1. Prompt the user for a credit card number and store it in a long long.
+    long long user_card = get_long_long("Number: ");
 
-// 2. Call Function 1 passing the card number and store the digit count in a variable.
+    // 2. Call Function 1 passing the card number and store the digit count in a variable.
+    int card_digits = count_digits(user_card);
 
-// 3. Validate length boundaries:
-//    If the digit count is NOT 13, AND NOT 15, AND NOT 16:
-//        Print "INVALID\n"
-//        Terminate the program by returning 0
+    // 3. Validate length boundaries:
+    //    If the digit count is NOT 13, AND NOT 15, AND NOT 16:
+    if (!card_digits == 13)
+        ;
+    //        Print "INVALID\n"
+    //        Terminate the program by returning 0
 
-// 4. Call Function 2 passing the card number and store the prefix (first 2 digits) in a variable.
+    // 4. Call Function 2 passing the card number and store the prefix (first 2 digits) in a variable.
 
-// 5. Call Function 3 (Luhn) passing the card number and store the boolean result.
+    // 5. Call Function 3 (Luhn) passing the card number and store the boolean result.
 
-// 6. Verify mathematical validity and company:
-//    If Luhn is false:
-//        Print "INVALID\n"
-//    If Luhn is true, classify the card:
-//        - If it has 15 digits AND the prefix is 34 or 37: Print "AMEX\n"
-//        - If it has 16 digits AND the prefix is between 51 and 55: Print "MASTERCARD\n"
-//        - If it has 13 or 16 digits AND the first digit is 4 (hint: if prefix divided by 10 equals 4): Print "VISA\n"
-//        - If it passes Luhn but doesn't meet any of the prefix rules above: Print "INVALID\n"
-// }
+    // 6. Verify mathematical validity and company:
+    //    If Luhn is false:
+    //        Print "INVALID\n"
+    //    If Luhn is true, classify the card:
+    //        - If it has 15 digits AND the prefix is 34 or 37: Print "AMEX\n"
+    //        - If it has 16 digits AND the prefix is between 51 and 55: Print "MASTERCARD\n"
+    //        - If it has 13 or 16 digits AND the first digit is 4 (hint: if prefix divided by 10 equals 4): Print "VISA\n"
+    //        - If it passes Luhn but doesn't meet any of the prefix rules above: Print "INVALID\n"
+    // }
+}
 
 // =========================================================================
 // FUNCTION IMPLEMENTATIONS
