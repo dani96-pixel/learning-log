@@ -17,5 +17,19 @@ by passing a str of your own as an argument
 to input. Be sure to call main at the bottom 
 of your file.
 """
-def main():
-	
+def main() -> None:
+	user_input = input()
+	converted_str = convert(user_input)
+	print(converted_str)
+
+def convert(user_str: str) -> str:
+	user_str = (
+	user_str
+		.replace(":)", "🙂")
+		.replace(":(", "🙁")
+	)
+
+	return user_str
+
+if __name__=="__main__":
+	main()
