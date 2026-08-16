@@ -21,35 +21,19 @@ The program uses:
 
 
 def main() -> None:
-    time = input("What time is it? ").strip().lower()
-    formated_time = convert(time)
-
-    # a.m / p.m format
-    if time.endswith("a.m.") or time.endswith("p.m."):
-        if time.endswith("a.m."):
-            if 7.0 <= formated_time <= 8.0:
-                print("breakfast time")
-        elif time.endswith("p.m."):
-            if 12 <= formated_time < 13 or formated_time == 1.0:
-                print("lunch time")
-            if 6 <= formated_time <= 7:
-                print("dinner time")
-        else:
-            print("")
-
-    # 24 hour format
-    else:
-        if 7.0 <= formated_time <= 8.0:
-            print("breakfast time")
-        elif 12.0 <= formated_time <= 13.0:
-            print("lunch time")
-        elif 18.0 <= formated_time <= 19.0:
-            print("dinner time")
-        else:
-            print("")
+    time = input("What time is it? ")
+    formatted_time = convert(time)
+    if 7 <= formatted_time <= 8:
+        print("breakfast time")
+    elif 12 <= formatted_time <= 13:
+        print("lunch time")
+    elif 18 <= formatted_time <= 19:
+        print("dinner time")
 
 
-def convert(time: str) -> float:
+def convert(user_time: str) -> float:
+    user_time = user_time.lower().strip()
+    time = user_time
     time = (
         time
         .replace("a.m.", "")
@@ -57,10 +41,11 @@ def convert(time: str) -> float:
         .strip()
         .split(":")
     )
-    hour = float(time[0])
+    hour = int(time[0])
+    if user_time.endswith("p.m.") and hour != 12:
+        hour += 12
     minute = (float(time[1]) / 60)
     time = hour + minute
-# print(time)
     return time
 
 
