@@ -40,13 +40,6 @@ int main(int argc, string argv[])
     int k = atoi(argv[1]);
 
     // Normalize the key value within the range of 0-25
-    if (k < 0)
-    {
-        printf("The Key must be a positive integer\n");
-        return 1;
-    }
-
-    // Make it sure is between 1 and 26
     k %= 26;
 
     // Prompt the user for the plaintext message to encrypt
