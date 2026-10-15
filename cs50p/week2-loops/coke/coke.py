@@ -21,7 +21,7 @@ def insert_coin() -> tuple[bool, int]:
         return False, coin
 
 
-# While loop to check the prize of the coke
+# While loop to check the price of the coke
 while amount_due > 0:
     print(f"Amount Due: {amount_due}")
     accepted, coin = insert_coin()
